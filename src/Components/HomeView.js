@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import axios from "axios"
+import { Link } from 'react-router-dom'
 
 const HomeView = () => {
     const [data , setData] = React.useState([])
@@ -33,14 +34,17 @@ const HomeView = () => {
             <ContentHolder>
 
                 {
-                    data?.map((props)=>(
-                        <Card>
-                    <Image src={props.poster}/>
-                   <TextHolder>
-                   <Title2>Title:{props.title}</Title2>
-                   <Produced>directed_by:{props.directed_by}</Produced>
-                   </TextHolder>
-                </Card>
+                    data?.map(({id, poster, title, directed_by})=>(
+                        <RouterLink to ={`/Details/${id}`}>
+                        <Card key = {id}>
+                        <Image src={poster}/>
+                       <TextHolder>
+                       <Title2>Title:{title}</Title2>
+                       <Produced>directed_by:{directed_by}</Produced>
+                       </TextHolder>
+                       </Card>
+                        </RouterLink>
+                   
                     ))
                 }
             </ContentHolder>
@@ -51,6 +55,12 @@ const HomeView = () => {
 }
 
 export default HomeView
+
+const RouterLink = styled(Link)`
+text-decoration:none;
+color:black;
+`
+
 
 const Produced = styled.div`
 margin-top:5px ;
@@ -131,8 +141,10 @@ justify-content: space-evenly;
 `
 const Title = styled.div`
 font-size: 20px;
+margin-top: 20px;
 text-transform: uppercase;
 font-weight: bold;
+text-align: center;
 `
 const SearcBar = styled.div`
 height : 300px;
