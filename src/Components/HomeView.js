@@ -5,11 +5,27 @@ import { Link } from 'react-router-dom'
 
 const HomeView = () => {
     const [data , setData] = React.useState([])
+    const [datasearch, setdatasearch] = React.useState([])
+    const [searchValue, setSearchValue] = React.useState("");
+    const [loading , setisloading] = React.useState(false)
 
-    const url = "https://www.fakerestapi.com/datasets/api/v1/movie-details-dataset.json";
+
+
+    const Searchdata  = async (query) => {
+        setSearchValue(query);
+        if(!query){
+            return
+        }
+        setisloading(true)
+        const res = await axios.get(`https://www.fakerestapi.com/datasets/api/v1/movie-details-dataset.json${searchValue}`)
+        console.log(res.data.data)
+        setData(res.data.data)
+
+
+    }
     
     const Getdata  = async () => {
-        const res = await axios.get(url)
+        const res = await axios.get("https://www.fakerestapi.com/datasets/api/v1/movie-details-dataset.json")
         console.log(res.data.data)
         setData(res.data.data)
 
@@ -18,6 +34,7 @@ const HomeView = () => {
 
     React.useEffect(()=>{
         Getdata()
+        Searchdata()
     },[])
   return (
     <Container>
@@ -25,13 +42,20 @@ const HomeView = () => {
             <SearcBar>
                 <Title>Search for movie</Title>
                 <InputHolder>
-                <Input/>
+                <Input onChange={(e) => {
+                    Searchdata(e.target.value)
+                }}
+                placeholder = "Search for Movies.."
+ 
+                />
                 <Button>Search</Button>
                 </InputHolder>
             </SearcBar>
             <Title>All  movies</Title>
 
-            <ContentHolder>
+            {
+                searchValue ? (
+                    <ContentHolder>
 
                 {
                     data?.map(({id, poster, title, directed_by})=>(
@@ -48,6 +72,27 @@ const HomeView = () => {
                     ))
                 }
             </ContentHolder>
+                ) : (
+                    <ContentHolder>
+
+                {
+                    data?.map(({id, poster, title, directed_by})=>(
+                        <RouterLink to ={`/Details/${id}`}>
+                        <Card key = {id}>
+                        <Image src={poster}/>
+                       <TextHolder>
+                       <Title2>Title:{title}</Title2>
+                       <Produced>directed_by:{directed_by}</Produced>
+                       </TextHolder>
+                       </Card>
+                        </RouterLink>
+                   
+                    ))
+                }
+            </ContentHolder>
+                )
+            }
+            {datasearch.length <= 0 && searchValue ? <Text>Not found</Text> : null}
 
         </Wrapper>
     </Container>
@@ -55,6 +100,16 @@ const HomeView = () => {
 }
 
 export default HomeView
+
+const Text = styled.div`
+font-size: 26px;
+color: white;
+
+font-weight: bold;
+color: gray;
+
+margin-top: 100px;
+`;
 
 const RouterLink = styled(Link)`
 text-decoration:none;
