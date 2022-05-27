@@ -29,10 +29,9 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
+ 
 first i am supposed to state that system ran into an issueso i had to use another system that is why you are seeing another person name on  the push history
 
 install some npm packages such as styled component axios react-router-dom
@@ -59,6 +58,8 @@ i also use react usestate to store the state and fetch the data
 ### Details Page
 use params is a nethod in react router dom, use params allows you to fetch  parameters from a page
 the detsil page was design to get just a single information of the each card such as the image, description,tittle, time produced and other basic information..like i said earlier i ran into sn issue because of the method allow in the api..i would have done better if i really had time to get a better api
+
+### `npm run eject`
 
 
 If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will 
