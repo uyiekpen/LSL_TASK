@@ -32,6 +32,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
+first i am supposed to state that system ran into an issueso i had to use another system that is why you are seeing another person name on  the push history
 
 install some npm packages such as styled component axios react-router-dom
 ### `npm install styled-components`
