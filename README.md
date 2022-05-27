@@ -33,6 +33,23 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
+install some npm packages such as styled component axios react-router-dom
+### `npm install styled-components`
+for styling of our pages
+
+### `npm install axios`
+to fetch data
+
+### `npm install react-router-dom`
+to route to a new page
+
+### header component 
+it was a simple header design on a fixed position and its was responsive
+
+###homeview component
+it was design using styled component method of styling.. the contains a simple search input and botton and also cards that holds the the movie and its title, the page is  responsive at every screen
+i wasnt not able to consume the api send from rapid api.. it was free..i managed to scrap the web and find the one use on this page...i had so many limitation because the method was only get method
+
 If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
