@@ -32,6 +32,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
 first i am supposed to state that system ran into an issueso i had to use another system that is why you are seeing another person name on  the push history
 
 install some npm packages such as styled component axios react-router-dom
@@ -47,11 +48,21 @@ to route to a new page
 ### header component 
 it was a simple header design on a fixed position and its was responsive
 
-###homeview component
+### homeview component
 it was design using styled component method of styling.. the contains a simple search input and botton and also cards that holds the the movie and its title, the page is  responsive at every screen
-i wasnt not able to consume the api send from rapid api.. it was free..i managed to scrap the web and find the one use on this page...i had so many limitation because the method was only get method
+i wasnt not able to consume the api send from rapid api.. it was free..i managed to scrap the web and find the one use on this page...i had so many limitation because the method was only get method, no get bu id i ran into many issues
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+i created a state to get gata from my api using react.usestate, then axios get method was use to fetch data from the  api.. then i map my data to the card to get all the movies.
+
+i also use react usestate to store the state and fetch the data
+
+### Details Page
+use params is a nethod in react router dom, use params allows you to fetch  parameters from a page
+the detsil page was design to get just a single information of the each card such as the image, description,tittle, time produced and other basic information..like i said earlier i ran into sn issue because of the method allow in the api..i would have done better if i really had time to get a better api
+
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will 
+remove the single build dependency from your project.
 
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
