@@ -30,8 +30,8 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
- 
+
+### Work done on task
 first i am supposed to state that system ran into an issueso i had to use another system that is why you are seeing another person name on  the push history
 
 install some npm packages such as styled component axios react-router-dom
